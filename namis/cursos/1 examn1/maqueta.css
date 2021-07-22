@@ -1,0 +1,37 @@
+#contenedor{
+	margin: 0 auto;
+	text-align: left;
+	width: 900px;
+	border:1px solid red
+}
+#cabeza {
+	width: 900px;
+	height: 100px;
+	margin: 0 auto;
+	background-color: yellow;
+}
+
+#izquierda {
+	width: 200px;
+	height: 300px;
+	float: left;
+
+	background-color: green;
+}
+
+#derecha {
+	width: 700px;
+	height: 300px;
+	float: left;
+
+	background-color: red;
+}
+#pie {
+	clear: both;
+	width: 900px;
+	height: 100px;
+	margin: 0 auto;
+	background-color: yellow;
+
+}
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    a: <input  type="number"  id="a"> <br>
+    b: <input type="number"  id="b"> <br>
+    c: <input type="number"  id="c"> <br>
+    <input type="submit" value="calcular" onclick="calcularMyM()" ><br>
+    
+    <script>
+   function calcularMyM()
+   {
+       var a=parseInt( document.getElementById('a').value);
+       var b=parseInt(document.getElementById('b').value);
+       var c=parseInt(document.getElementById('c').value);
+
+       if( a> b && a >c )
+       document.getElementById("a").style.backgroundColor = "blue";
+       if( b> a && b >c )
+       document.getElementById("b").style.backgroundColor = "blue";
+       if( c> a && c >b )
+       document.getElementById("c").style.backgroundColor = "blue";
+
+
+       if( a< b && a < c )
+       document.getElementById("a").style.backgroundColor = "red";
+       if( b< a && b <c )
+       document.getElementById("b").style.backgroundColor = "red";
+       if( c< a && c <b )
+       document.getElementById("c").style.backgroundColor = "red";
+       
+   }
+
+    </script>
+
+</body>
+</html>

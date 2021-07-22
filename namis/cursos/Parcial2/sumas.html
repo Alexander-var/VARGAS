@@ -1,0 +1,105 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title> -->
+    <style media="screen">
+        .pregunta4{
+            border: 1px solid red;
+        }
+        .primerofila{
+            display: flex;
+            justify-content: space-between;
+            margin: 10px;
+            width: 80%;
+        }
+        .primerofila label{
+            width: 40%;
+        }
+        .primerofila input{
+            width: 20%;
+        }
+        .primerofila button{
+            width: 20%;
+            background-color: #0073bd;
+            color: white
+        }
+        .segundafila{
+            margin: 10px;
+            display: flex;
+            justify-content: space-between;
+            width: 30%;
+            margin: 0 auto;
+            /* border: 1px solid red; */
+        }
+        .segundafila button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+            color: white;
+            background-color: #0073bd;
+            padding: 10px;
+        }
+        #entradas{
+            width: 50%;
+        }
+        #entradas input{
+            width: 80px;
+        }
+        #resultado{
+            background: #c12300;
+            width: 80px;
+            height: 40px;
+            margin: 0 auto;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+    </style>
+<!-- </head>
+<body> -->
+
+    <h3>Pregunta 4</h3>
+    <section class="pregunta4">
+        <div class="primerofila">
+            <label for="">Cantidad de elementos</label>
+            <input type="number" id="limite" value="">
+            <button type="button" id="obtener" onclick="obtener()">Obtener</button>
+        </div>
+        <div class="segundafila">
+            <button type="button" onclick="sumar()">+</button>        <!-- Boton de sumar -->
+            <div id="entradas"></div>            <!-- Aqui van las entradas o los inputs -->
+        </div>
+        <div id="resultado"></div>        <!-- Aqui va el resultado de las sumas -->
+    </section>
+
+
+    <!-- <script type="text/javascript">
+        function obtener()
+        {
+            document.getElementById('entradas').innerHTML="";
+            let limite = parseInt(document.getElementById('limite').value);
+            let entrada = "<input type=\"number\" size=\"30\" name=\"numero\" value=\"\"></br>";
+            for (var i = 0; i < limite; i++) {
+                document.getElementById('entradas').innerHTML+=entrada;
+            }
+        }
+        function sumar()
+        {
+            let limite = parseInt(document.getElementById('limite').value);
+            let sumatotal = 0;
+            let valores = document.getElementsByName('numero');
+            for (var i = 0; i < limite; i++) {
+                sumatotal += parseInt(valores[i].value);
+                console.log(valores[2].value);
+            }
+            document.getElementById('resultado').innerHTML=sumatotal;
+        }
+    </script>
+</body>
+</html> -->

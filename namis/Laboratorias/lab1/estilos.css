@@ -1,0 +1,107 @@
+.cabecera{
+    background-color:#f35368;
+    width: 900px;
+    height: 200px;
+    
+}
+.izquierda{
+    background-color:rgb(88, 149, 240);
+    width: 900px;
+    height: 50px;
+}
+.derecha{
+    background-color:rgb(63, 97, 245);
+    width: 900px;
+    height: 250px;
+    display: flex;
+    
+   
+}
+.imagen{
+    display: inline;
+    margin-top: 20px;
+    margin-right: 50px;
+}
+
+.tituloeEscudo{    
+    justify-content: center;
+    display: flex;
+    width:100% ;
+}
+
+.tituloprincipal{
+    color: red;
+    font-size:25px;
+}
+
+.titulosecundario{
+    display: inline;
+    margin-right: 100px;
+    color: blue;
+    font-size: 20px;
+}
+.rojo{
+   background-color: red;
+   width: 300px;
+   
+}
+.amarillo{
+    background-color: yellow;
+    width: 300px;
+}
+.verde{
+    background-color: green;
+    width: 300px;
+    
+}
+
+.menu{
+    list-style: none;
+    text-align: left;
+    width: 100px;
+    float: right;
+    display: flex;
+}
+.bordelista{
+    border: 1px solid;
+    background-color: white;
+    padding: 5px;
+    margin-left: 5px;
+    font-size: 15px;
+}
+.tamano{
+    width: 100px;
+}
+ .colores{
+        list-style: none;
+        text-align: left;
+        width: 300px;
+        float: right;
+        display: flex;
+}
+.bordelista1{
+    border: 1px solid;
+    background-color: red;
+    padding: 5px;
+    margin-left: 5px;
+    font-size: 15px;
+}
+.bordelista2{
+    border: 1px solid;
+    background-color: yellow;
+    padding: 5px;
+    margin-left: 5px;
+    font-size: 15px;
+}
+.bordelista3{
+    border: 1px solid;
+    background-color: green;
+    padding: 5px;
+    margin-left: 5px;
+    font-size: 15px;
+    width: 300px;
+    
+}
+.derecha p{
+text-align: center;  
+}

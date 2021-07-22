@@ -1,0 +1,11 @@
+.cuadrado{
+    width:  150px ;
+    height: 150px;
+    margin: auto;
+    border-style: solid;
+    margin-top: 100px;
+
+}
+.input{
+    width: 30px;
+}

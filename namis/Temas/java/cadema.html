@@ -1,0 +1,43 @@
+<html> 
+  
+<head> 
+    <title> 
+      Remove spaces from a string using JavaScript
+    </title> 
+</head> 
+  
+<body> 
+      
+    <h2> 
+        Remove spaces from a string using JavaScript
+    </h2> 
+      
+    <p> 
+        Original string is:  
+        site/ delft stack .com/ 
+    </p> 
+      
+    <p> 
+        New Sentence is:  
+        <span class="outputString"></span> 
+    </p> 
+      
+    <button onclick="removeSpacesFromString()"> 
+        Clean Spaces 
+    </button> 
+      
+    <script type="text/javascript"> 
+        const removeSpacesFromString = () => { 
+            let text1 =  
+                "site/ delft stack .com/"; 
+          
+            let text2 =  
+                text1.split(" ").join(""); 
+          
+            document.querySelector('.outputString').textContent 
+                    = text2; 
+        } 
+    </script> 
+</body> 
+  
+</html>

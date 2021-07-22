@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    .caja {
+        height: 200px;
+        width: 200px;
+        background-color: rgb(221 255 253);
+        align-items: center;  
+        padding: 20px;
+    }
+
+    #boton {
+        text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+
+    }
+
+    input[type="number"], #mes {
+        width: 100%;
+        border: 2px solid #aaa;
+        border-radius: 4px;
+        margin: 8px 0;
+        outline: none;
+        padding: 8px;
+        box-sizing: border-box;
+        transition: 0.3s;
+    }
+
+    input[type="number"]:focus {
+        border-color: dodgerBlue;
+        box-shadow: 0 0 8px 0 dodgerBlue;
+    }
+    #mes:focus {
+        border-color: dodgerBlue;
+        box-shadow: 0 0 8px 0 dodgerBlue;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="caja" id="caja">
+
+        </div>
+        <br>
+        <label for="mes">mes</label>
+        <select name="" id="mes">
+            <option value="0">Enero</option>
+            <option value="1">Febrero</option>
+            <option value="2">Marzo</option>
+            <option value="3">Abril</option>
+            <option value="4">Mayo</option>
+            <option value="5" selected>Junio</option>
+            <option value="6">Julio</option>
+            <option value="7">Agosto</option>
+            <option value="8">Septiembre</option>
+            <option value="9">Octubre</option>
+            <option value="10">Noviembre</option>
+            <option value="11">Diciembre</option>
+
+        </select>
+        <label for="anio">Año:</label>
+        <input type="number" name="anio" id="anio" required>
+        <button id="boton">Mostrar</button>
+    </div>
+</body>
+
+</html>
+<script src="scripts.js"></script>

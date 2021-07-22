@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div class="container" style="text-align: center; justify-content: center; align-items: center; margin: auto; padding: 20px 370px;" >
+       <div class="contenido" id="contenido" style="background-color: rgb(29, 166, 230); width: 600px; height: 360px;">
+               hola
+       </div> <br>
+       <label for="anio">ANO</label>
+       <input type="number" name="anios" id="anio">
+       <label for="fecha">FECHA</label>
+       <select name="fechas" id="fecha">
+           <option value="1">Enero</option>
+           <option value="2">febrero</option>
+           <option value="3">marzo</option>
+           <option value="4">abril</option>
+           <option value="5">mayo</option>
+           <option value="6">junio</option>
+           <option value="7">julio</option>
+           <option value="8">agosto</option>
+           <option value="9">septiembre</option>
+           <option value="10">octubrte</option>
+           <option value="11">novienbre</option>
+           <option value="12">dicienbre</option>
+       </select> <br> <br>
+       <input type="button" value="nostrar" onclick="cargarContenido()">
+   </div> 
+
+   <script>
+       function cargarContenido() {
+           alert(document.getElementById("fecha").value);
+ var parametros = "anio="+document.getElementById("anio").value+"&mes="+document.getElementById("fecha").value;
+fetch("calendario.php?"+parametros, {
+    method: 'get'
+}).then(function (response) {
+    return response.text();
+}).then(function (text) {
+    document.getElementById('contenido').innerHTML = text;
+    console.log(text);
+}).catch(function (err) {
+    alert('error');
+});
+}
+   </script>
+</body>
+</html>

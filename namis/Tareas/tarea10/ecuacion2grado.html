@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    a: <input type="number"  id="a"> <br>
+    b: <input type="number"  id="b"> <br>
+    c: <input type="number"  id="c"> <br>
+    <input type="submit" value="calcular" onclick="calcular()" ><br>
+    <div style="background-color: blue; width:100px" id="resultado1" > </div><br>
+    <div style="background-color:yellowgreen; width:100px" id="resultado2" > </div>
+    
+    <script>
+   function calcular()
+   {
+       var a=parseInt( document.getElementById('a').value);
+       var b=parseInt(document.getElementById('b').value);
+       var c=parseInt(document.getElementById('c').value);
+       var res1,res2;
+       var h = b**2-4*a*c;
+       if (h>0) {
+           res1=(-b+Math.sqrt(b**2-4*a*c))/(2*a);
+           res2=(-b-Math.sqrt(b**2-4*a*c))/(2*a);
+       } else {
+           if (h==0) {
+               res1= -b/(2*a);
+               res2= -b/(2*a);
+           } else {
+               var m = -b/(2*a);
+               var n=(Math.sqrt(-(b**2-4*a*c))/(2*a)).toFixed(2);
+               res1 = document.write(m,"+",n,"i <br>");
+               res2 = document.write(m,"-",n,"i <br>");
+           }
+       }
+
+       document.getElementById('resultado1').innerHTML=res1;
+       console.log(res1);
+       document.getElementById('resultado2').innerHTML=res2;
+       console.log(res2);
+       
+   }
+
+    </script>
+
+</body>
+</html>

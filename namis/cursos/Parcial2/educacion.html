@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043) -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Basic -->
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Site Metas -->
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Joson</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="bootstrap.css">
+  <!-- fonts style -->
+  <link href="css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="style.css" rel="stylesheet">
+  <!-- responsive style -->
+  <link href="responsive.css" rel="stylesheet">
+  <script src="ajax.js" charset="utf-8"></script>
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <div class="navbar-brand" href="" id="datos">
+            <h3>
+             2do parcial SIS 256
+            </h3>
+            <span> UMSFXCH</span>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+            <ul class="navbar-nav  ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="">Inicio <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="primeraPregunta()" href="#"> Pregunta 1 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="javascript: cargar('login.html')" href="#"> Pregunta 2 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="terceraPregunta()"> Pregunta 3 </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="mostrarSuma()" href="#">Pregunta 4</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="mostrarPrestamo()">Pregunta 5</a>
+              </li>
+            </ul>
+
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <div id="contenido">
+
+    </div>
+    <!-- end slider section -->
+  </div>
+
+
+
+  <!-- end info section -->
+
+  <!-- footer section -->
+  <footer class="container-fluid footer_section">
+    <p>
+      © 2021-06-30
+      Estudiante:
+      repositorio Git:
+    </p>
+
+  </footer>
+
+
+  <footer class="container-fluid footer_section">
+
+      <p>
+
+        Edad:
+        <input type="radio" name="edad" value="18 a 20"> 18 a 20
+        <input type="radio" name="edad" value="21 a 22" checked> 21 a 22
+        <input type="radio" name="edad" value="23 a 24"> 23 a 24
+        <input type="radio" name="edad" value="25 a 30"> 25 a 30
+        <input type="radio" name="edad" value="mas de  30"> mas de 30
+
+
+      </p>
+
+  </footer>
+  <!-- footer section -->
+  <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="bootstrap.js"></script>
+  <script type="text/javascript">
+// -----------Variables globales que guardan cambios minimos-------
+      contador=1;    // Para alternar entre ASC y DESC
+      columnaNueva = null;    // Para ver que es click en nueva columna y ordenar ASC
+// ------------------------------------------------------------------------------------
+      function primeraPregunta()
+      {
+          let edades = document.getElementsByName('edad');
+          let pag = document.getElementsByTagName('p').length;
+          let enl = document.getElementsByTagName('a').length;
+          let dato = document.getElementById('datos').innerText;
+          console.log(dato," Esta es la pagina total");
+          for (var i = 0; i < 5; i++) {
+              if (edades[i].checked) {
+                  console.log(edades[i].value,"Edad seleccionada");
+                  var edad = edades[i].value; // Edad atrapada
+              }
+          }
+          // ======Ajax=====================================================
+          ajax = new XMLHttpRequest();
+          ajax.onreadystatechange = function(){
+              if(ajax.readyState == 4){
+                  if (ajax.status == 200) {
+                      // Que hacer con los datos recividos
+                      // document.write(ajax.responseText)
+                      document.getElementById('contenido').innerHTML = ajax.responseText;
+                  }
+              }
+          }
+          ajax.open("GET","tabla.php?edad="+edad+"&parrafos="+pag+"&enlaces="+enl+"&datos="+dato,true)
+          // ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+          ajax.send();
+          // =============Ajax Fin===========================================
+      }
+      // ==========Segunda Pregunta========================================
+      function cargar(pagina)
+      {
+          ajax = new XMLHttpRequest();
+          ajax.onreadystatechange = function(){
+              if(ajax.readyState == 4){
+                  if (ajax.status == 200) {
+                      document.getElementById('contenido').innerHTML = ajax.responseText;
+                  }
+              }
+          }
+          ajax.open("GET",pagina,true)
+          // ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+          ajax.send();
+        }
+        function autenticar()
+        {
+            let columAH = document.getElementById('editarH');
+            let columA = document.getElementById('editar');
+            let usu = document.getElementById('usuario').value;
+            let pass = document.getElementById('pass').value;
+            let datos = "usuario="+usu+"&pass="+pass;
+            let ajax = new XMLHttpRequest();
+            ajax.onreadystatechange = function(){
+                if(ajax.readyState == 4){
+                    if (ajax.status == 200) {
+                        document.getElementById('contenido').innerHTML = ajax.responseText;
+                    }
+                }
+            }
+            ajax.open("POST","autenticar.php",true)
+            ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+            ajax.send(datos);
+        }
+      // ==========Fin Segunda pregunta=====================================
+      // ==========Inicio Tercera Pregunta=====================================
+      function terceraPregunta()
+      {
+          const url = "pregunta3.php";
+          fetch(url)
+          .then(function(response){
+              if (response.ok) {
+                  return response.text();
+              }else {
+                  throw "Error en la llamada al servidor";
+              }
+          })
+          .then(function(texto){
+              document.getElementById('contenido').innerHTML=texto;
+              console.log("texto de prueba funcionando correctamente");
+          })
+          .catch(function(error){
+              console.log(error);
+          });
+      }
+
+      function ordenarColumna(parametro)
+      {
+          var url = null;
+          var columna = parametro.id;
+          //console.log(parametro.id," aqui es columna")
+          if (contador==1 || columna != columnaNueva) { // ASC
+              url = 'pregunta3.php?columna='+columna+'&orden=ASC';
+              contador = 0;
+              console.log(" ASC")
+          } else { // DESC
+              url = 'pregunta3.php?columna='+columna+'&orden=DESC';
+              contador = 1;
+              console.log("DESC")
+          }
+          columnaNueva = parametro.id;
+          fetch(url)
+          .then(function(response){
+              if (response.ok) {
+                  return response.text();
+              }else {
+                  throw "Error en la llamada al servidor";
+              }
+          })
+          .then(function(texto){
+              document.getElementById('contenido').innerHTML=texto;
+              console.log("texto de prueba funcionando correctamente");
+          })
+          .catch(function(error){
+              console.log(error);
+          });
+      }
+      // =========Fin tercera pregunta=======================================
+      function mostrarSuma()
+      {
+          ajax = new XMLHttpRequest();
+          ajax.onreadystatechange = function(){
+              if(ajax.readyState == 4){
+                  if (ajax.status == 200) {
+                      // Que hacer con los datos recividos
+                      // document.write(ajax.responseText)
+                      document.getElementById('contenido').innerHTML = ajax.responseText;
+                  }
+              }
+          }
+          ajax.open("GET","sumas.html",true)
+          // ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+          ajax.send();
+      }
+  // ==================================================================
+      function obtener()
+      {
+          document.getElementById('entradas').innerHTML="";
+          let limite = parseInt(document.getElementById('limite').value);
+          let entrada = "<input type=\"number\" size=\"30\" name=\"numero\" value=\"\"></br>";
+          for (var i = 0; i < limite; i++) {
+              document.getElementById('entradas').innerHTML+=entrada;
+          }
+      }
+      function sumar()
+      {
+          let limite = parseInt(document.getElementById('limite').value);
+          let sumatotal = 0;
+          let valores = document.getElementsByName('numero');
+          for (var i = 0; i < limite; i++) {
+              sumatotal += parseInt(valores[i].value);
+              console.log(valores[2].value);
+          }
+          document.getElementById('resultado').innerHTML=sumatotal;
+      }
+      // ===============================================================
+      function mostrarPrestamo()
+      {
+          let ajax = new XMLHttpRequest();
+          ajax.onreadystatechange = function(){
+              if(ajax.readyState == 4){
+                  if (ajax.status == 200) {
+                      document.getElementById('contenido').innerHTML = ajax.responseText;
+                  }
+              }
+          }
+          ajax.open("GET","Carreras.php",true)
+          ajax.send();
+      }
+      // ================================================================
+      function leerLibros(){
+          let seleccionado = parseInt(document.getElementById('carreras').value);
+          console.log(seleccionado);
+          const url = 'leerLibros.php?llave='+seleccionado;
+          fetch(url)
+          .then(function(response){
+              if (response.ok) {
+                  return response.text();
+              }else {
+                  throw "Error en la llamada al servidor";
+              }
+          })
+          .then(function(texto){
+              document.getElementById('libros').innerHTML=texto;
+              console.log("texto de prueba");
+          })
+          .catch(function(error){
+              console.log(error);
+          });
+      }
+      // ===============================================================
+      function guardarPrestamo(){
+          let idlibro = parseInt(document.getElementById('librosss').value);
+          let nombreprestamo = document.getElementById('nombre').value;
+          console.log(idlibro,nombreprestamo);
+          const url = 'guardarPrestamo.php?idp='+idlibro+'&nombre='+nombreprestamo;
+          fetch(url)
+          .then(function(response){
+              if (response.ok) {
+                  return response.text();
+              }else {
+                  throw "Error en la llamada al servidor";
+              }
+          })
+          .then(function(texto){
+              document.getElementById('contenido').innerHTML=texto;
+              console.log("texto de prueba");
+          })
+          .catch(function(error){
+              console.log(error);
+          });
+      }
+  </script>
+</body>
+</html>

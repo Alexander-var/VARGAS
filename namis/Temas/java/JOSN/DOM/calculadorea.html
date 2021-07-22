@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="obsiones" id="ob">
+        <option value="suma">sumar</option>
+        <option value="resta">resta</option>
+        <option value="dividir">division</option>
+        <option value="multiplicar" >multiplicar</option>
+    </select> <br> <br>
+    <input placeholder="A" type="number" id="A" name="A"> <br>
+    <input placeholder="B" type="number" id="B" name="B"> <br>
+    <button onclick="calcular()" > calcular  </button> <br>
+<br>
+    <div  id="resultado"  style="width: 200px; height: 50px; background-color: chartreuse;"> 
+
+    </div> <br>
+
+<script>
+    function calcular() {
+        var a=parseInt( document.getElementById('A').value);
+        var b=parseInt( document.getElementById('B').value);
+        switch ( document.getElementById('ob').selectedIndex){
+            case 0 : r= a+b ;
+            break;
+            case 1 : r= a-b ;
+            break;
+            case 2 : r= a/b ;
+            break;
+            case 3 : r= a*b ;
+            break;
+        
+        }
+        document.getElementById('resultado').innerHTML=r;
+        
+    }
+
+</script>
+</body>
+</html>

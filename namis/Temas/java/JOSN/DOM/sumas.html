@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    a: <input type="number" id="a"> <br>
+    b: <input type="number" id="b"> <br>
+    <input type="submit" value="calcular" onclick="sumar()">
+    <div style="background-color: chartreuse; width: 100px;">res</div>
+   <script>
+       function sumar(a,b) {
+           a=parseInt( document.getElementById('a').value);
+           console.log(a);
+           b=parseInt( document.getElementById('b').value);
+           console.log(b);
+           var c = a+b;
+           return a+b;
+       }
+   </script>
+</body>
+</html>
